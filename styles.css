@@ -1,0 +1,280 @@
+:root {
+    --blue-left: #1561ad;
+    --blue-right: #1c77ac;
+    --blue-green: #1dbab4;
+    --coral: #fc5226;
+    --dark: #0e2a44;
+    --light: #f3f9fb;
+    --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.7;
+}
+
+/* ---------- 1. HEADER ---------- */
+header {
+    background: linear-gradient(120deg, var(--blue-left), var(--blue-right) 55%, var(--blue-green));
+    color: var(--white);
+    text-align: center;
+    padding: 45px 20px 35px;
+    position: relative;
+    overflow: hidden;
+}
+header::before {
+    content: "";
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    background: rgba(252,82,38,0.25);
+    border-radius: 50%;
+}
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 180px; height: 180px;
+    background: rgba(29,186,180,0.3);
+    border-radius: 50%;
+}
+header h1 {
+    font-size: 52px;
+    letter-spacing: 3px;
+    text-shadow: 2px 3px 8px rgba(0,0,0,0.3);
+    position: relative;
+}
+header h1 span { color: var(--coral); }
+header p {
+    font-style: italic;
+    font-size: 18px;
+    margin-top: 6px;
+    color: #e8f6ff;
+    position: relative;
+}
+header input {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 30px 0 0 30px;
+    width: 260px;
+    outline: none;
+    font-size: 14px;
+}
+header button {
+    padding: 12px 26px;
+    border: none;
+    border-radius: 0 30px 30px 0;
+    background: var(--coral);
+    color: var(--white);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+header button:hover { background: #e03d12; }
+.search-wrap { margin-top: 20px; position: relative; }
+
+/* ---------- 2. NAV ---------- */
+nav {
+    background: var(--dark);
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+}
+nav a {
+    display: inline-block;
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 22px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+    transition: color 0.3s;
+}
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%; bottom: 8px;
+    width: 0; height: 3px;
+    background: var(--blue-green);
+    border-radius: 3px;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+nav a:hover { color: var(--blue-green); }
+nav a:hover::after { width: 60%; }
+
+/* ---------- 3. MAIN ---------- */
+main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 45px 22px;
+}
+
+/* ---------- 4. SECTION ---------- */
+section { margin-bottom: 50px; }
+section h2 {
+    color: var(--blue-left);
+    font-size: 30px;
+    margin-bottom: 22px;
+    position: relative;
+    padding-left: 16px;
+}
+section h2::before {
+    content: "";
+    position: absolute;
+    left: 0; top: 6px; bottom: 6px;
+    width: 6px;
+    background: linear-gradient(var(--coral), var(--blue-green));
+    border-radius: 4px;
+}
+#home p {
+    background: var(--white);
+    padding: 26px 30px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(21,97,173,0.1);
+    border-left: 5px solid var(--blue-green);
+    font-size: 16.5px;
+}
+
+/* ---------- 8 + 9. FIGURE / FIGCAPTION ---------- */
+.figure-row { display: flex; gap: 26px; flex-wrap: wrap; }
+figure {
+    flex: 1;
+    min-width: 260px;
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+figure:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 14px 30px rgba(28,119,172,0.25);
+}
+figure img { width: 100%; height: 230px; object-fit: cover; display: block; }
+figcaption {
+    padding: 16px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--white);
+    background: linear-gradient(90deg, var(--blue-right), var(--blue-green));
+}
+
+/* ---------- Layout: events + aside ---------- */
+.layout { display: flex; gap: 30px; flex-wrap: wrap; }
+.content { flex: 3; min-width: 300px; }
+
+/* ---------- 5. ARTICLE ---------- */
+article {
+    background: var(--white);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin-bottom: 22px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    border-top: 4px solid var(--blue-left);
+    transition: transform 0.3s;
+}
+article:hover { transform: translateX(6px); border-top-color: var(--coral); }
+article h3 { color: var(--blue-left); font-size: 22px; margin-bottom: 10px; }
+article time {
+    display: inline-block;
+    background: var(--coral);
+    color: var(--white);
+    padding: 4px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+/* ---------- 6. ASIDE ---------- */
+aside {
+    flex: 1;
+    min-width: 230px;
+    background: linear-gradient(160deg, var(--blue-left), var(--blue-right));
+    color: var(--white);
+    border-radius: 16px;
+    padding: 26px;
+    align-self: flex-start;
+    box-shadow: 0 6px 20px rgba(21,97,173,0.25);
+}
+aside h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+aside ul { list-style: none; }
+aside li {
+    padding: 10px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.25);
+}
+aside li::before { content: "\2726 "; color: var(--blue-green); font-weight: bold; }
+
+/* ---------- CONTACT FORM ---------- */
+form {
+    background: var(--white);
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 6px 22px rgba(0,0,0,0.1);
+    border-top: 5px solid var(--coral);
+    max-width: 620px;
+}
+form label {
+    font-weight: bold;
+    color: var(--blue-left);
+    display: block;
+    margin-bottom: 6px;
+}
+form input {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 18px;
+    border: 2px solid #dce8ef;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.3s;
+}
+form input:focus {
+    outline: none;
+    border-color: var(--blue-green);
+}
+form button {
+    padding: 12px 32px;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: transform 0.2s, opacity 0.3s;
+}
+form button[type="submit"] { background: var(--coral); color: var(--white); }
+form button[type="reset"]  { background: var(--blue-right); color: var(--white); }
+form button:hover { transform: translateY(-2px); opacity: 0.92; }
+
+/* ---------- 7. FOOTER ---------- */
+footer {
+    background: var(--dark);
+    color: #cfe2ee;
+    text-align: center;
+    padding: 40px 20px 30px;
+    margin-top: 30px;
+    border-top: 5px solid var(--blue-green);
+}
+footer h3 { color: var(--coral); font-size: 22px; margin-bottom: 12px; }
+footer a {
+    color: var(--blue-green);
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+footer a:hover { color: var(--coral); }
+footer .copy { margin-top: 16px; font-size: 13px; color: #7fa3bb; }
