@@ -1,3 +1,4 @@
+
 :root {
     --blue-left: #1561ad;
     --blue-right: #1c77ac;
@@ -75,7 +76,7 @@ header button {
     transition: background 0.3s;
 }
 header button:hover { background: #e03d12; }
-.search-wrap { margin-top: 20px; position: relative; }
+.search-wrap { margin-top: 20px; }
 
 /* ---------- 2. NAV ---------- */
 nav {
@@ -157,13 +158,33 @@ figure:hover {
     transform: translateY(-8px);
     box-shadow: 0 14px 30px rgba(28,119,172,0.25);
 }
-figure img { width: 100%; height: 230px; object-fit: cover; display: block; }
+figure img { width: 100%; height: 230px; object-fit: cover; display: block; background: #e8f0f5; }
 figcaption {
     padding: 16px;
     text-align: center;
     font-weight: bold;
     color: var(--white);
     background: linear-gradient(90deg, var(--blue-right), var(--blue-green));
+}
+
+/* ---------- GALLERY GRID (3 images) ---------- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    background: #e8f0f5;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.gallery-grid img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 10px 26px rgba(21,97,173,0.28);
 }
 
 /* ---------- Layout: events + aside ---------- */
@@ -278,3 +299,10 @@ footer a {
 }
 footer a:hover { color: var(--coral); }
 footer .copy { margin-top: 16px; font-size: 13px; color: #7fa3bb; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+    header h1 { font-size: 38px; }
+    header input { width: 180px; }
+    .gallery-grid { grid-template-columns: 1fr; }
+}
